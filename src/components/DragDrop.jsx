@@ -25,7 +25,7 @@ const DragDrop = () => {
   const [{isOver}, drop] = useDrop(() => ({
     accept: 'image',
     drop: (item) =>{
-      console.log(item)
+      // console.log(item)
       addImageToBoard(item.id)},
     collect: (monitor) => ({
       isOver:  !!monitor.isOver(),
@@ -33,8 +33,11 @@ const DragDrop = () => {
   }))
 
   const addImageToBoard = (id) => {
-    console.log(id)
-    setBoard([...board, ...pictures.filter(picture => picture.id===id)])
+
+    const boardImages = pictures.filter(picture => picture.id===id)
+    setBoard(board => [...board, ...boardImages])
+
+
   }
 
 
