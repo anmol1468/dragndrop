@@ -25,7 +25,6 @@ const DragDrop = () => {
   const [{isOver}, drop] = useDrop(() => ({
     accept: 'image',
     drop: (item) =>{
-      // console.log(item)
       addImageToBoard(item.id)},
     collect: (monitor) => ({
       isOver:  !!monitor.isOver(),
@@ -35,6 +34,8 @@ const DragDrop = () => {
   const addImageToBoard = (id) => {
 
     const boardImages = pictures.filter(picture => picture.id===id)
+
+    // pass function in setBoard so that i using the lastest version of state Board
     setBoard(board => [...board, ...boardImages])
 
 
