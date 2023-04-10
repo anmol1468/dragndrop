@@ -5,7 +5,10 @@ function Picture({id, url}) {
 
   const [{isDragging}, drag] = useDrag(() => ({
     type: 'image',
+
+    //the drop in useDrop can using this name 'item' to access the data
     item: {id:id},
+    //this i think is to check if the element is being dragged right now
     collect: (monitor) => ({
       isDragging:  !!monitor.isDragging(),
     }),
