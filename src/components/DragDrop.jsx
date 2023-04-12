@@ -35,7 +35,7 @@ const DragDrop = () => {
 
     const boardImages = pictures.filter(picture => picture.id===id)
 
-    // pass function in setBoard so that i using the lastest version of state Board
+    // pass function in setBoard so that it is using the lastest version of state Board
     setBoard(board => [...board, ...boardImages])
 
 
